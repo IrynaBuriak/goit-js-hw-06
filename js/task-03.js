@@ -15,13 +15,12 @@ const images = [
 
 const galleryList = document.querySelector(".gallery");
 
-images.forEach((image) => {
-  const markup = `<li><img width="100%" src="${image.url}" alt="${image.alt}"/></li>`;
+const markup = images.map((image) => `<li><img width="100%" src="${image.url}" alt="${image.alt}"/></li>`).join("");
 
-  galleryList.insertAdjacentHTML("beforeend", markup);
+galleryList.insertAdjacentHTML("beforeend", markup);
 
-  galleryList.style.display = "flex";
-  galleryList.style.flexDirection = "row";
-  galleryList.style.alignItems = "center";
-  galleryList.style.gap = "30px";
-});
+galleryList.style.display = "flex";
+galleryList.style.flexDirection = "row";
+galleryList.style.alignItems = "center";
+galleryList.style.gap = "30px";
+galleryList.style.listStyle = "none";
